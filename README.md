@@ -36,7 +36,7 @@ Run the notebooks in numeric order; each one consumes the previous one's output 
 | [4_fine_tune_llm.ipynb](notebooks/4_fine_tune_llm.ipynb) | QLoRA distil of the teacher labels into Qwen2.5-7B-Instruct, with before/after eval on a held-out test set |
 | [5_Exp1 — Chap 4](notebooks/5_Exp1_textual_similarity_clustering_baseline_Chap4.ipynb) | Baseline: Jaccard word overlap blended with bge-m3 phrase embeddings, HAC / Leiden clustering |
 | [6_Exp2 — Chap 5](notebooks/6_Exp2_entity_weighted_theme_representations_Chap5.ipynb) | Entity-weighted theme vectors, `w(e,θ) = BM25 · IDF · type_prior`, optional 1-hop KG propagation |
-| [7_Exp3 RGCN](notebooks/7_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGCN.ipynb) · [8_Exp3 RGAT](notebooks/8_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGAT.ipynb) — Chap 6 | Relational GNN theme embeddings + two-stage clustering; RGAT adds attention-entropy, relation-ablation and edge-mask interpretability |
+| [7_Exp3 RGCN](notebooks/7_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGCN.ipynb) · [8_Exp3 RGAT](notebooks/8_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGAT.ipynb) - Chap 6 | Relational GNN theme embeddings + two-stage clustering; RGAT adds attention-entropy, relation-ablation and edge-mask interpretability |
 
 
 
@@ -95,7 +95,7 @@ The base articles come from
 | Artefact | Link |
 | --- | --- |
 | Dataset and evaluation dataset | [`MannSingh/financial-news-theme-kg`](https://huggingface.co/datasets/MannSingh/financial-news-theme-kg) |
-| Fine-tuned LLM model | [`MannSingh/qwen2.5-7b-theme-kg-lora`](https://huggingface.co/MannSingh/qwen2.5-7b-theme-kg-lora) |
+| Finetuned LLM model | [`MannSingh/qwen2.5-7b-theme-kg-lora`](https://huggingface.co/MannSingh/qwen2.5-7b-theme-kg-lora) |
 
 The model repo is adapter-only — load `Qwen/Qwen2.5-7B-Instruct` and apply the LoRA on top with
 `PeftModel`.
