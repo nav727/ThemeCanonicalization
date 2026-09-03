@@ -1,12 +1,15 @@
 # Theme Discovery and Canonicalisation in Financial News
 
-Each news article is passed through an LLM that extracts open-vocabulary
-**themes** plus a **knowledge graph** of typed triplets anchored to those themes. The themes are
-then canonicalised — free-text phrases such as *"labor union formation effort"* and
-*"labor union organizing campaign"* have to collapse into one cluster — using three
-representations of increasing structure, each scored against a synthetic golden set.
+Three phrases, one theme, three separate nodes in your graph.
+"Fed rate hike". "Federal Reserve raises interest rates". "Tightening by the Fed". A person reads those and sees one story. A knowledge graph built from news stores three unrelated nodes and every task downstream suffers because of this.
 
-Corpus: 2017–2023 financial news (~70k articles, ~8.5% sent through LLM extraction).
+For example, in late 2021, the same supply chain crunch was written up as "port congestion" by one outlet, "logjams" by another and "supply snarls" by a third. The article count splits three ways, so no single node ever crossed an alerting threshold. A real disruption went unnoticed. Merge the three onto one node and the spike is obvious.
+
+This repo is the MSc thesis that fixes that merge step. An LLM reads each article and returns the keyphrases in it plus a knowledge graph built around them. Those keyphrases are then clustered onto one canonical theme node — and the whole point is to test whether the graph structure helps, or whether the words keyphrase text were enough.
+
+Spoiler: They were not! Keyphrase text alone scores 0.438 F1 on the held out test split; adding the knowledge graph entities takes it to 0.870.
+
+Corpus: 61,752 English financial news articles (2017–2023). 5,433 of them (8.8%) went through LLM extraction, yielding 17,201 keyphrases and 87,969 KG triplets.
 
 ## Pipeline
 
