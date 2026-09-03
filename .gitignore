@@ -1,3 +1,26 @@
+# data files
+*.parquet
+*.pkl
+*.csv
+*.html
+*.pdf
+*.txt
+*.bkp
+*.drawio
+*.json
+*.cypher
+*.safetensors
+*.DS_Store
+*.pt
+*.gitattributes
+*.bin
+*.gz
+*.npz
+*.graphml
+*.tex
+*.png
+*.jsonl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
