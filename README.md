@@ -1,6 +1,6 @@
 # Theme Discovery and Canonicalisation in Financial News
 
-MSc thesis code. Each news article is passed through an LLM that extracts open-vocabulary
+Each news article is passed through an LLM that extracts open-vocabulary
 **themes** plus a **knowledge graph** of typed triplets anchored to those themes. The themes are
 then canonicalised — free-text phrases such as *"labor union formation effort"* and
 *"labor union organizing campaign"* have to collapse into one cluster — using three
@@ -21,8 +21,6 @@ Run the notebooks in numeric order; each one consumes the previous one's output 
 | [5_Exp1 — Chap 4](notebooks/5_Exp1_textual_similarity_clustering_baseline_Chap4.ipynb) | Baseline: Jaccard word overlap blended with bge-m3 phrase embeddings, HAC / Leiden clustering |
 | [6_Exp2 — Chap 5](notebooks/6_Exp2_entity_weighted_theme_representations_Chap5.ipynb) | Entity-weighted theme vectors, `w(e,θ) = BM25 · IDF · type_prior`, optional 1-hop KG propagation |
 | [7_Exp3 RGCN](notebooks/7_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGCN.ipynb) · [8_Exp3 RGAT](notebooks/8_Exp3_Graph_Neural_Networks_Theme_Representations_Chap6_RGAT.ipynb) — Chap 6 | Relational GNN theme embeddings + two-stage clustering; RGAT adds attention-entropy, relation-ablation and edge-mask interpretability |
-| [9_EDA_raw_news_and_extraction.ipynb](notebooks/9_EDA_raw_news_and_extraction.ipynb) | Corpus and extraction EDA figures |
-| [10_push_datasets_to_hf.ipynb](notebooks/10_push_datasets_to_hf.ipynb) · [11_push_model_to_hf.ipynb](notebooks/11_push_model_to_hf.ipynb) | Publish the datasets and the LoRA adapter to Hugging Face (private repos) |
 
 ## Evaluation
 
@@ -42,8 +40,6 @@ data/                inputs and intermediates (gitignored)
 output/              per-experiment results: eda, exp1_chapter4, exp2_chapter5,
                      exp3_chapter6_rgcn, exp3_chapter6_gat
 llm_finetune_output/ QLoRA adapter (kg-lora) and the train/val/test JSONL splits
-misc/                earlier exploratory notebooks — not part of the pipeline
-Papers/              reference PDFs
 ```
 
 Data, outputs, figures and model weights are all gitignored, so a fresh clone starts at notebook 1.
@@ -64,7 +60,6 @@ Create a `.env` in the repo root (never commit it) with:
 | --- | --- |
 | `DEEPSEEK_API_KEY` | notebook 2 (theme + KG extraction) |
 | `OPENROUTER_API_KEY` | notebook 3 (synthetic golden set) |
-| `HF_TOKEN` | notebooks 10 and 11 (write access) |
 
 Two things to adjust before running locally: notebook 2 has a hardcoded absolute `ENV_PATH`, and
 notebooks 4 and 11 have an `env = "GPU"` toggle at the top pointing at cluster paths.
