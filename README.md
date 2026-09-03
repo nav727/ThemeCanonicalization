@@ -88,9 +88,7 @@ notebooks 4 and 11 have an `env = "GPU"` toggle at the top pointing at cluster p
 ## Data and licence
 
 The base articles come from
-[FelixDrinkall/financial-news-dataset](https://github.com/FelixDrinkall/financial-news-dataset),
-licensed **CC BY-NC-SA 4.0**. ShareAlike means this derivative carries the same licence and must
-keep the attribution — a licence condition, not a courtesy.
+[FelixDrinkall/financial-news-dataset](https://github.com/FelixDrinkall/financial-news-dataset), licensed **CC BY-NC-SA 4.0**. ShareAlike means this derivative carries the same licence and must keep the attribution.
 
 ## Artefacts
 
