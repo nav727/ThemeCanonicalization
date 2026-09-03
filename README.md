@@ -2,7 +2,7 @@
 
 Three keyphrases, one common theme, but shows up as three separate nodes in your knowledge graph.
 - "Fed rate hike"
-- "Federal Reserve raises interest rates" and
+- "Federal Reserve raises interest rates"
 - "Tightening by the Fed"
 
 <img width="739" height="336" alt="Knowledge graph: before and after theme canonicalization" src="https://github.com/user-attachments/assets/6c51d39d-fce9-4fb4-9b1f-ae4ecba115a9" />
