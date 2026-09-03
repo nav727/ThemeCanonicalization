@@ -99,3 +99,6 @@ The base articles come from
 
 The model repo is adapter-only — load `Qwen/Qwen2.5-7B-Instruct` and apply the LoRA on top with
 `PeftModel`.
+
+---
+*Disclaimer: parts of codebase in this repository were written with the assistance of AI coding tools. Notably, visualisation and plotting code in the notebooks.*
